@@ -3,21 +3,19 @@ Gmail-SSB
 
 Gmail-SSB is a [site-specific browser](http://en.wikipedia.org/wiki/Site-specific_browser) for Gmail that's optimized for Google's fancy-schmancy voice/video calls. There are better Gmail SSBs out there, such as [Mailplane](http://mailplaneapp.com/). Or you could roll your own using [Fluid.app](http://fluidapp.com/). Unfortunately, neither of those quite fit my needs:
 
-  * Mailplane has a ton of features, but none of which I need. I'm already super-productive using Gmail's native shortcut keys.
-  * Fluid is also great at what it does. Sadly, closing the Fluid window releases the WebView, which kills any voice/video conversations you have open.
+ * Mailplane has a ton of features, but none of which I need. I'm already super-productive using Gmail's native shortcut keys.
+ * Fluid is also great at what it does. Sadly, closing the Fluid window releases the WebView, which kills any voice/video conversations you have open.
 
 Gmail-SSB addresses these issues so I can work safely in Safari without fear of accidentally closing my Gmail tab during a call.
-
-**Caveats:** This project is literally 90 minutes old. It may erase your hard drive and delete all your Gmail, but probably not. Still, you've been warned.
 
 FEATURES
 --------
 
- * Dedicated app just for Gmail.
+ * Dedicated app just for Gmail. Non-Gmail links automatically open in your real web browser.
  * Open/close/hide/minimize the app without disconnecting your voice/video calls.
  * Incoming calls will ring in the background even if the window is closed.
- * Visual alerts when incoming calls come in [soon]
- * Growl notifications of new emails and calls [soon]
+ * Growl notifications for incoming voice/video calls. (Also bounces the dock.)
+ * Dock badge shows unread email count.
  * Sparkle updates
 
 DOWNLOAD
