@@ -23,7 +23,7 @@ FEATURES
 DOWNLOAD
 --------
 
-You can download the [latest version here](http://amz.clickontyler.com/gmail/gmailssb_0.1.zip).
+You can download the [latest version here](http://shine.clickontyler.com/download.php?id=7).
 
 UPDATES
 -------
