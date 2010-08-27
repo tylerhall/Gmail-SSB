@@ -14,6 +14,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(incomingCall:) name:@"INCOMING_CALL" object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(incomingVideo:) name:@"INCOMING_VIDEO" object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(incomingChat:) name:@"INCOMING_CHAT" object:nil];
 	
 	mainWindowController = [[GmailWindowController alloc] initWithWindowNibName:@"GmailWindow"];
 	[mainWindowController showWindow:self];
@@ -29,7 +30,6 @@
 }
 
 - (void)incomingCall:(NSNotification *)notification {
-	[self overlayImageNamed:@"phone"];
 	[NSApp requestUserAttention:NSCriticalRequest];
 	
 	if(voiceBounce) {
@@ -50,10 +50,23 @@
 		NSData *iconData = [[NSImage imageNamed:@"Icon"] TIFFRepresentation];
 		[[Growler sharedGrowler] growlWithTitle:@"Incoming Video Call"
 									description:@"You have an incoming Gmail video call."
-							   notificationName:@"Incoming Video Call" 
+							   notificationName:@"Incoming Video Call"
 									   iconData:iconData 
 										context:nil];
 		videoBounce = NO;
+	}
+}
+
+- (void)incomingChat:(NSNotification *)notification {
+	if(![NSApp isActive] && chatBounce) {
+		[NSApp requestUserAttention:NSInformationalRequest];
+		NSData *iconData = [[NSImage imageNamed:@"Icon"] TIFFRepresentation];
+		[[Growler sharedGrowler] growlWithTitle:@"New Chat Message"
+									description:@"You have a new Google Talk message."
+							   notificationName:@"New Chat Message"
+									   iconData:iconData 
+										context:nil];
+		chatBounce = NO;
 	}
 }
 
@@ -77,8 +90,7 @@
 	[NSApp setApplicationIconImage:[NSImage imageNamed:@"Icon"]];
 	voiceBounce = YES;
 	videoBounce = YES;
+	chatBounce = YES;
 }
-
-
 
 @end

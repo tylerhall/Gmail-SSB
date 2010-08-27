@@ -53,6 +53,10 @@
 	NSRange phoneCall = [title rangeOfString:@"Incoming voice"];
 	if(phoneCall.location != NSNotFound)
 		[[NSNotificationCenter defaultCenter] postNotificationName:@"INCOMING_CALL" object:nil userInfo:nil];
+
+	NSRange newChat = [title rangeOfString:@"says…"];
+	if(newChat.location != NSNotFound)
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"INCOMING_CHAT" object:nil userInfo:nil];	
 }
 
 - (void)webView:(WebView *)sender mouseDidMoveOverElement:(NSDictionary *)elementInformation modifierFlags:(NSUInteger)modifierFlags {

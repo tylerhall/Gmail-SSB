@@ -15,11 +15,13 @@
 	GmailWindowController *mainWindowController;
 	BOOL voiceBounce;
 	BOOL videoBounce;
+	BOOL chatBounce;
 }
 
 - (IBAction)showMainWindow:(id)sender;
 - (void)overlayImageNamed:(NSString *)imageName;
 - (void)incomingVideo:(NSNotification *)notification;
 - (void)incomingCall:(NSNotification *)notification;
+- (void)incomingChat:(NSNotification *)notification;
 
 @end
