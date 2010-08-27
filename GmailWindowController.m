@@ -8,6 +8,7 @@
 
 #import "GmailWindowController.h"
 #import "NullRequestHandler.h"
+#import "SafariBar.h"
 
 @implementation GmailWindowController
 
@@ -61,8 +62,15 @@
 
 - (void)webView:(WebView *)sender mouseDidMoveOverElement:(NSDictionary *)elementInformation modifierFlags:(NSUInteger)modifierFlags {
 	if(elementInformation != nil) {
-		// NSString *href = [elementInformation valueForKey:@"WebElementLinkTitleKey"];
-		// NSLog(@"%@", href);
+		NSURL *href = [elementInformation valueForKey:@"WebElementLinkURL"];
+		if(href) {
+			[statusBar setStringValue:[href absoluteString]];
+		} else {
+			[statusBar setStringValue:@""];
+		}
+	}
+	else {
+		[statusBar setStringValue:@""];
 	}
 }
 

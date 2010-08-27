@@ -9,8 +9,11 @@
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
 
+@class SafariBar;
+
 @interface GmailWindowController : NSWindowController {
 	IBOutlet WebView *webView;
+	IBOutlet SafariBar *statusBar;
 	WebView *replacementWebView;
 }
 
