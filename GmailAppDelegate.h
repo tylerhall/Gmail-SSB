@@ -17,5 +17,7 @@
 
 - (IBAction)showMainWindow:(id)sender;
 - (void)overlayImageNamed:(NSString *)imageName;
+- (void)incomingVideo:(NSNotification *)notification;
+- (void)incomingCall:(NSNotification *)notification;
 
 @end

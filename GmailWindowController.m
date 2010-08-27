@@ -77,7 +77,12 @@
 	if(phoneCall.location != NSNotFound) {
 		[[NSNotificationCenter defaultCenter] postNotificationName:@"INCOMING_CALL" object:nil userInfo:nil];
 	}
-	
+
+	NSRange videoCall = [url rangeOfString:@"tb_camera.png"];
+	if(videoCall.location != NSNotFound) {
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"INCOMING_VIDEO" object:nil userInfo:nil];
+	}
+
 	return nil;
 }
 

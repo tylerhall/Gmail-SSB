@@ -13,6 +13,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(incomingCall:) name:@"INCOMING_CALL" object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(incomingVideo:) name:@"INCOMING_VIDEO" object:nil];
 	
 	mainWindowController = [[GmailWindowController alloc] initWithWindowNibName:@"GmailWindow"];
 	[mainWindowController showWindow:self];
@@ -29,6 +30,10 @@
 
 - (void)incomingCall:(NSNotification *)notification {
 	[self overlayImageNamed:@"phone"];
+	[NSApp requestUserAttention:NSCriticalRequest];
+}
+
+- (void)incomingVideo:(NSNotification *)notification {
 	[NSApp requestUserAttention:NSCriticalRequest];
 }
 
