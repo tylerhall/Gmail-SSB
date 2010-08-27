@@ -48,7 +48,7 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Gmail-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Gmail-Info.plist"; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* Gmail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gmail.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1107320486CEB800E47090 /* Gmail-SSB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Gmail-SSB.app"; path = "build/Debug/Gmail-SSB.app"; sourceTree = "<group>"; };
 		C618BC79122762970053EF89 /* GmailWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GmailWindow.xib; sourceTree = "<group>"; };
 		C618BC7C122763070053EF89 /* GmailWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GmailWindowController.h; sourceTree = "<group>"; };
 		C618BC7D122763070053EF89 /* GmailWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GmailWindowController.m; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* Gmail.app */,
+				8D1107320486CEB800E47090 /* Gmail-SSB.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -187,7 +187,7 @@
 			name = Gmail;
 			productInstallPath = "$(HOME)/Applications";
 			productName = Gmail;
-			productReference = 8D1107320486CEB800E47090 /* Gmail.app */;
+			productReference = 8D1107320486CEB800E47090 /* Gmail-SSB.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
