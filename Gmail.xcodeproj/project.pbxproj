@@ -20,6 +20,7 @@
 		C618BCFC122768FA0053EF89 /* NullRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C618BCFB122768FA0053EF89 /* NullRequestHandler.m */; };
 		C65AC8C6122781D400CEA888 /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = C65AC8C5122781D400CEA888 /* phone.png */; };
 		C65AC8FD1227840600CEA888 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C65AC8FC1227840600CEA888 /* Quartz.framework */; };
+		C65AC9AF1227940000CEA888 /* TransparentWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C65AC9AE1227940000CEA888 /* TransparentWindow.m */; };
 		C6AF962612277225003F9D8F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AF962512277225003F9D8F /* Sparkle.framework */; };
 		C6AF962B12277249003F9D8F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AF962512277225003F9D8F /* Sparkle.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,8 @@
 		C618BCFB122768FA0053EF89 /* NullRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullRequestHandler.m; sourceTree = "<group>"; };
 		C65AC8C5122781D400CEA888 /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone.png; sourceTree = "<group>"; };
 		C65AC8FC1227840600CEA888 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		C65AC9AD1227940000CEA888 /* TransparentWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransparentWindow.h; sourceTree = "<group>"; };
+		C65AC9AE1227940000CEA888 /* TransparentWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransparentWindow.m; sourceTree = "<group>"; };
 		C6AF962512277225003F9D8F /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +86,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C65AC9AB122793E500CEA888 /* Candy */,
 				256AC3D80F4B6AC300CF3369 /* GmailAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* GmailAppDelegate.m */,
 				C618BC7C122763070053EF89 /* GmailWindowController.h */,
@@ -175,6 +179,15 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		C65AC9AB122793E500CEA888 /* Candy */ = {
+			isa = PBXGroup;
+			children = (
+				C65AC9AD1227940000CEA888 /* TransparentWindow.h */,
+				C65AC9AE1227940000CEA888 /* TransparentWindow.m */,
+			);
+			name = Candy;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -239,6 +252,7 @@
 				C618BC7E122763070053EF89 /* GmailWindowController.m in Sources */,
 				C618BCD1122766870053EF89 /* GmailWindow.m in Sources */,
 				C618BCFC122768FA0053EF89 /* NullRequestHandler.m in Sources */,
+				C65AC9AF1227940000CEA888 /* TransparentWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

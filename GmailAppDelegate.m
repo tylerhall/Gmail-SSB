@@ -31,10 +31,30 @@
 - (void)incomingCall:(NSNotification *)notification {
 	[self overlayImageNamed:@"phone"];
 	[NSApp requestUserAttention:NSCriticalRequest];
+	
+	if(voiceBounce) {
+		NSData *iconData = [[NSImage imageNamed:@"Icon"] TIFFRepresentation];
+		[[Growler sharedGrowler] growlWithTitle:@"Incoming Voice Call"
+									description:@"You have an incoming Gmail voice call."
+							   notificationName:@"Incoming Voice Call" 
+									   iconData:iconData 
+										context:nil];
+		voiceBounce = NO;
+	}
 }
 
 - (void)incomingVideo:(NSNotification *)notification {
 	[NSApp requestUserAttention:NSCriticalRequest];
+
+	if(videoBounce) {
+		NSData *iconData = [[NSImage imageNamed:@"Icon"] TIFFRepresentation];
+		[[Growler sharedGrowler] growlWithTitle:@"Incoming Video Call"
+									description:@"You have an incoming Gmail video call."
+							   notificationName:@"Incoming Video Call" 
+									   iconData:iconData 
+										context:nil];
+		videoBounce = NO;
+	}
 }
 
 - (void)overlayImageNamed:(NSString *)imageName {
@@ -55,6 +75,10 @@
 
 - (void)applicationDidBecomeActive:(NSNotification *)notification {
 	[NSApp setApplicationIconImage:[NSImage imageNamed:@"Icon"]];
+	voiceBounce = YES;
+	videoBounce = YES;
 }
+
+
 
 @end

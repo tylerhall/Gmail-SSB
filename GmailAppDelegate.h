@@ -7,12 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <Quartz/Quartz.h>
+#import "Growler.h"
 
 @class GmailWindowController;
 
-@interface GmailAppDelegate : NSObject <NSApplicationDelegate> {
+@interface GmailAppDelegate : NSObject <NSApplicationDelegate, GrowlApplicationBridgeDelegate> {
 	GmailWindowController *mainWindowController;
+	BOOL voiceBounce;
+	BOOL videoBounce;
 }
 
 - (IBAction)showMainWindow:(id)sender;

@@ -45,6 +45,14 @@
 
 - (void)webView:(WebView *)sender didReceiveTitle:(NSString *)title forFrame:(WebFrame *)frame {
 	[[self window] setTitle:title];
+	
+	NSRange videoCall = [title rangeOfString:@"Incoming video"];
+	if(videoCall.location != NSNotFound)
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"INCOMING_VIDEO" object:nil userInfo:nil];
+
+	NSRange phoneCall = [title rangeOfString:@"Incoming voice"];
+	if(phoneCall.location != NSNotFound)
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"INCOMING_CALL" object:nil userInfo:nil];
 }
 
 - (void)webView:(WebView *)sender mouseDidMoveOverElement:(NSDictionary *)elementInformation modifierFlags:(NSUInteger)modifierFlags {
@@ -68,23 +76,5 @@
 	[nullHandler loadRequest:request];
 	return [nullHandler webView];
 }
-
-- (id)webView:(WebView *)sender identifierForInitialRequest:(NSURLRequest *)request fromDataSource:(WebDataSource *)dataSource {
-	NSString *url = [[request URL] absoluteString];
-	// NSLog(@"-- %@", url);
-	
-	NSRange phoneCall = [url rangeOfString:@"green-phone.png"];
-	if(phoneCall.location != NSNotFound) {
-		[[NSNotificationCenter defaultCenter] postNotificationName:@"INCOMING_CALL" object:nil userInfo:nil];
-	}
-
-	NSRange videoCall = [url rangeOfString:@"tb_camera.png"];
-	if(videoCall.location != NSNotFound) {
-		[[NSNotificationCenter defaultCenter] postNotificationName:@"INCOMING_VIDEO" object:nil userInfo:nil];
-	}
-
-	return nil;
-}
-
 
 @end
