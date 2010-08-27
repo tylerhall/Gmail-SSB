@@ -25,6 +25,7 @@
 		C698F9751227ACD600AEC0D7 /* SafariBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C698F9731227ACD600AEC0D7 /* SafariBar.m */; };
 		C698F9861227AD3A00AEC0D7 /* Growler.m in Sources */ = {isa = PBXBuildFile; fileRef = C698F9851227AD3A00AEC0D7 /* Growler.m */; };
 		C698F98B1227AD5600AEC0D7 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = C698F98A1227AD5600AEC0D7 /* RegexKitLite.m */; };
+		C698F9EE1227B37300AEC0D7 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C698F9ED1227B37300AEC0D7 /* Credits.rtf */; };
 		C6AF962612277225003F9D8F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AF962512277225003F9D8F /* Sparkle.framework */; };
 		C6AF962B12277249003F9D8F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AF962512277225003F9D8F /* Sparkle.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		C698F9851227AD3A00AEC0D7 /* Growler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Growler.m; sourceTree = "<group>"; };
 		C698F9891227AD5600AEC0D7 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		C698F98A1227AD5600AEC0D7 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		C698F9ED1227B37300AEC0D7 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		C6AF962512277225003F9D8F /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +173,7 @@
 			children = (
 				C618BCE81227678E0053EF89 /* Images */,
 				8D1107310486CEB800E47090 /* Gmail-Info.plist */,
+				C698F9ED1227B37300AEC0D7 /* Credits.rtf */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
 				C618BC79122762970053EF89 /* GmailWindow.xib */,
@@ -199,9 +202,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1107260486CEB800E47090 /* Gmail */ = {
+		8D1107260486CEB800E47090 /* Gmail-SSB */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Gmail" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Gmail-SSB" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
@@ -212,7 +215,7 @@
 			);
 			dependencies = (
 			);
-			name = Gmail;
+			name = "Gmail-SSB";
 			productInstallPath = "$(HOME)/Applications";
 			productName = Gmail;
 			productReference = 8D1107320486CEB800E47090 /* Gmail.app */;
@@ -230,7 +233,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* Gmail */,
+				8D1107260486CEB800E47090 /* Gmail-SSB */,
 			);
 		};
 /* End PBXProject section */
@@ -245,6 +248,7 @@
 				C618BC7A122762970053EF89 /* GmailWindow.xib in Resources */,
 				C618BCE71227678B0053EF89 /* Icon.icns in Resources */,
 				C65AC8C6122781D400CEA888 /* phone.png in Resources */,
+				C698F9EE1227B37300AEC0D7 /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +369,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Gmail" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Gmail-SSB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
