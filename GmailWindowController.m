@@ -47,6 +47,13 @@
 	[[self window] setTitle:title];
 }
 
+- (void)webView:(WebView *)sender mouseDidMoveOverElement:(NSDictionary *)elementInformation modifierFlags:(NSUInteger)modifierFlags {
+	if(elementInformation != nil) {
+		// NSString *href = [elementInformation valueForKey:@"WebElementLinkTitleKey"];
+		// NSLog(@"%@", href);
+	}
+}
+
 // This handles standard new window links
 - (void)webView:(WebView *)webView decidePolicyForNewWindowAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request newFrameName:(NSString *)frameName decisionListener:(id < WebPolicyDecisionListener >)listener {
 	[listener ignore];
@@ -57,10 +64,22 @@
 // Note: there's a longstanding WebKit bug that passes a null request
 // in many cases. That's why we work around it with the NullRequestHandler crap.
 - (WebView *)webView:(WebView *)sender createWebViewWithRequest:(NSURLRequest *)request {
-	NSLog(@"popup clicked");
 	NullRequestHandler *nullHandler = [[NullRequestHandler alloc] init];
 	[nullHandler loadRequest:request];
 	return [nullHandler webView];
 }
+
+- (id)webView:(WebView *)sender identifierForInitialRequest:(NSURLRequest *)request fromDataSource:(WebDataSource *)dataSource {
+	NSString *url = [[request URL] absoluteString];
+	// NSLog(@"-- %@", url);
+	
+	NSRange phoneCall = [url rangeOfString:@"green-phone.png"];
+	if(phoneCall.location != NSNotFound) {
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"INCOMING_CALL" object:nil userInfo:nil];
+	}
+	
+	return nil;
+}
+
 
 @end

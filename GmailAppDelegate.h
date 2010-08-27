@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <Quartz/Quartz.h>
 
 @class GmailWindowController;
 
@@ -15,5 +16,6 @@
 }
 
 - (IBAction)showMainWindow:(id)sender;
+- (void)overlayImageNamed:(NSString *)imageName;
 
 @end

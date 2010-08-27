@@ -12,6 +12,8 @@
 @implementation GmailAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(incomingCall:) name:@"INCOMING_CALL" object:nil];
+	
 	mainWindowController = [[GmailWindowController alloc] initWithWindowNibName:@"GmailWindow"];
 	[mainWindowController showWindow:self];
 }
@@ -23,6 +25,31 @@
 
 - (IBAction)showMainWindow:(id)sender {
 	[[mainWindowController window] setIsVisible:YES];
+}
+
+- (void)incomingCall:(NSNotification *)notification {
+	[self overlayImageNamed:@"phone"];
+	[NSApp requestUserAttention:NSCriticalRequest];
+}
+
+- (void)overlayImageNamed:(NSString *)imageName {
+	float size = [[NSApp dockTile] size].width * .5;
+	float offset = [[NSApp dockTile] size].width - size;
+	
+	NSImage *overlay = [NSImage imageNamed:@"phone"];
+	NSImage *icon = [NSApp applicationIconImage];
+	[icon lockFocus];
+	CGContextRef ctxt = [[NSGraphicsContext currentContext] graphicsPort];
+	CGImageSourceRef source;
+	source = CGImageSourceCreateWithData((CFDataRef)[overlay TIFFRepresentation], NULL);
+	CGImageRef maskRef = CGImageSourceCreateImageAtIndex(source, 0, NULL);
+	CGContextDrawImage(ctxt, NSMakeRect(offset, offset, size, size), maskRef);
+	[icon unlockFocus];
+	[NSApp setApplicationIconImage:icon];
+}
+
+- (void)applicationDidBecomeActive:(NSNotification *)notification {
+	[NSApp setApplicationIconImage:[NSImage imageNamed:@"Icon"]];
 }
 
 @end

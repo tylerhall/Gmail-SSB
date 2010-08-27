@@ -18,6 +18,8 @@
 		C618BCD1122766870053EF89 /* GmailWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C618BCD0122766870053EF89 /* GmailWindow.m */; };
 		C618BCE71227678B0053EF89 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = C618BCE61227678B0053EF89 /* Icon.icns */; };
 		C618BCFC122768FA0053EF89 /* NullRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C618BCFB122768FA0053EF89 /* NullRequestHandler.m */; };
+		C65AC8C6122781D400CEA888 /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = C65AC8C5122781D400CEA888 /* phone.png */; };
+		C65AC8FD1227840600CEA888 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C65AC8FC1227840600CEA888 /* Quartz.framework */; };
 		C6AF962612277225003F9D8F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AF962512277225003F9D8F /* Sparkle.framework */; };
 		C6AF962B12277249003F9D8F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AF962512277225003F9D8F /* Sparkle.framework */; };
 /* End PBXBuildFile section */
@@ -48,7 +50,7 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Gmail-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Gmail-Info.plist"; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* Gmail-SSB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Gmail-SSB.app"; path = "build/Debug/Gmail-SSB.app"; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* Gmail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gmail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C618BC79122762970053EF89 /* GmailWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GmailWindow.xib; sourceTree = "<group>"; };
 		C618BC7C122763070053EF89 /* GmailWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GmailWindowController.h; sourceTree = "<group>"; };
 		C618BC7D122763070053EF89 /* GmailWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GmailWindowController.m; sourceTree = "<group>"; };
@@ -58,6 +60,8 @@
 		C618BCE61227678B0053EF89 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		C618BCFA122768FA0053EF89 /* NullRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NullRequestHandler.h; sourceTree = "<group>"; };
 		C618BCFB122768FA0053EF89 /* NullRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullRequestHandler.m; sourceTree = "<group>"; };
+		C65AC8C5122781D400CEA888 /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone.png; sourceTree = "<group>"; };
+		C65AC8FC1227840600CEA888 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		C6AF962512277225003F9D8F /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +73,7 @@
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				C618BCB4122764540053EF89 /* WebKit.framework in Frameworks */,
 				C6AF962612277225003F9D8F /* Sparkle.framework in Frameworks */,
+				C65AC8FD1227840600CEA888 /* Quartz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +101,7 @@
 				C6AF962512277225003F9D8F /* Sparkle.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				C618BCB3122764540053EF89 /* WebKit.framework */,
+				C65AC8FC1227840600CEA888 /* Quartz.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -113,7 +119,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* Gmail-SSB.app */,
+				8D1107320486CEB800E47090 /* Gmail.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,6 +169,7 @@
 		C618BCE81227678E0053EF89 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C65AC8C5122781D400CEA888 /* phone.png */,
 				C618BCE61227678B0053EF89 /* Icon.icns */,
 			);
 			name = Images;
@@ -187,7 +194,7 @@
 			name = Gmail;
 			productInstallPath = "$(HOME)/Applications";
 			productName = Gmail;
-			productReference = 8D1107320486CEB800E47090 /* Gmail-SSB.app */;
+			productReference = 8D1107320486CEB800E47090 /* Gmail.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -216,6 +223,7 @@
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				C618BC7A122762970053EF89 /* GmailWindow.xib in Resources */,
 				C618BCE71227678B0053EF89 /* Icon.icns in Resources */,
+				C65AC8C6122781D400CEA888 /* phone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
