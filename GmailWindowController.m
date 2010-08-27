@@ -9,7 +9,7 @@
 #import "GmailWindowController.h"
 #import "NullRequestHandler.h"
 #import "SafariBar.h"
-//#import "RegexKitLite.h"
+#import "RegexKitLite.h"
 
 @implementation GmailWindowController
 
@@ -60,11 +60,17 @@
 	if(newChat.location != NSNotFound)
 		[[NSNotificationCenter defaultCenter] postNotificationName:@"INCOMING_CHAT" object:nil userInfo:nil];
 
-	NSRange noMail = [title rangeOfString:@"says…"];
-	if(newChat.location != NSNotFound)
-		[[NSNotificationCenter defaultCenter] postNotificationName:@"INCOMING_CHAT" object:nil userInfo:nil];
 	
-	// UNREAD_COUNT_CHANGED
+	NSRange noMail = [title rangeOfString:@"Inbox -"];
+	if(noMail.location != NSNotFound) {
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"UNREAD_COUNT_CHANGED" object:nil userInfo:nil];
+	} else {
+		NSRange inbox = [title rangeOfString:@"Inbox"];
+		if(inbox.location != NSNotFound) {
+			int count = [[title stringByMatching:@"Inbox \\(([0-9]+)\\)" capture:1L] intValue];
+			[[NSNotificationCenter defaultCenter] postNotificationName:@"UNREAD_COUNT_CHANGED" object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:count] forKey:@"count"]];
+		}
+	}
 }
 
 - (void)webView:(WebView *)sender mouseDidMoveOverElement:(NSDictionary *)elementInformation modifierFlags:(NSUInteger)modifierFlags {

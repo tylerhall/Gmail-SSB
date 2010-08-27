@@ -323,6 +323,7 @@
 				GCC_PREFIX_HEADER = Gmail_Prefix.pch;
 				INFOPLIST_FILE = "Gmail-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = Gmail;
 			};
 			name = Release;
@@ -337,6 +338,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-licucore",
+				);
 				PREBINDING = NO;
 				SDKROOT = macosx10.6;
 			};
@@ -350,6 +354,9 @@
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = (
+					"-licucore",
+				);
 				PREBINDING = NO;
 				SDKROOT = macosx10.6;
 			};

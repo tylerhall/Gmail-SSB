@@ -72,8 +72,10 @@
 }
 
 - (void)unreadCountChanged:(NSNotification *)notification {
-	if([notification object]) {
-		int count = [(NSNumber *)[notification object] intValue];
+	if([notification userInfo] == nil) {
+		[[NSApp dockTile] setBadgeLabel:@""];
+	} else {		
+		int count = [[[notification userInfo] valueForKey:@"count"] intValue];
 		if(count == 0)
 			[[NSApp dockTile] setBadgeLabel:@""];
 		else
