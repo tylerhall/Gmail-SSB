@@ -23,5 +23,6 @@
 - (void)incomingVideo:(NSNotification *)notification;
 - (void)incomingCall:(NSNotification *)notification;
 - (void)incomingChat:(NSNotification *)notification;
+- (void)unreadCountChanged:(NSNotification *)notification;
 
 @end

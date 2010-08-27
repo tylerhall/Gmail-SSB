@@ -15,6 +15,7 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(incomingCall:) name:@"INCOMING_CALL" object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(incomingVideo:) name:@"INCOMING_VIDEO" object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(incomingChat:) name:@"INCOMING_CHAT" object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unreadCountChanged:) name:@"UNREAD_COUNT_CHANGED" object:nil];
 	
 	mainWindowController = [[GmailWindowController alloc] initWithWindowNibName:@"GmailWindow"];
 	[mainWindowController showWindow:self];
@@ -68,6 +69,17 @@
 										context:nil];
 		chatBounce = NO;
 	}
+}
+
+- (void)unreadCountChanged:(NSNotification *)notification {
+	if([notification object]) {
+		int count = [(NSNumber *)[notification object] intValue];
+		if(count == 0)
+			[[NSApp dockTile] setBadgeLabel:@""];
+		else
+			[[NSApp dockTile] setBadgeLabel:[NSString stringWithFormat:@"%d", count]];
+	}
+	
 }
 
 - (void)overlayImageNamed:(NSString *)imageName {

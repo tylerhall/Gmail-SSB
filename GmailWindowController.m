@@ -9,6 +9,7 @@
 #import "GmailWindowController.h"
 #import "NullRequestHandler.h"
 #import "SafariBar.h"
+//#import "RegexKitLite.h"
 
 @implementation GmailWindowController
 
@@ -57,7 +58,13 @@
 
 	NSRange newChat = [title rangeOfString:@"says…"];
 	if(newChat.location != NSNotFound)
-		[[NSNotificationCenter defaultCenter] postNotificationName:@"INCOMING_CHAT" object:nil userInfo:nil];	
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"INCOMING_CHAT" object:nil userInfo:nil];
+
+	NSRange noMail = [title rangeOfString:@"says…"];
+	if(newChat.location != NSNotFound)
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"INCOMING_CHAT" object:nil userInfo:nil];
+	
+	// UNREAD_COUNT_CHANGED
 }
 
 - (void)webView:(WebView *)sender mouseDidMoveOverElement:(NSDictionary *)elementInformation modifierFlags:(NSUInteger)modifierFlags {

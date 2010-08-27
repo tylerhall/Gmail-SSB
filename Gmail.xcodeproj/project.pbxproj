@@ -20,7 +20,11 @@
 		C618BCFC122768FA0053EF89 /* NullRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C618BCFB122768FA0053EF89 /* NullRequestHandler.m */; };
 		C65AC8C6122781D400CEA888 /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = C65AC8C5122781D400CEA888 /* phone.png */; };
 		C65AC8FD1227840600CEA888 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C65AC8FC1227840600CEA888 /* Quartz.framework */; };
-		C65AC9AF1227940000CEA888 /* TransparentWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C65AC9AE1227940000CEA888 /* TransparentWindow.m */; };
+		C698F9681227ACC500AEC0D7 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C698F9671227ACC500AEC0D7 /* Growl.framework */; };
+		C698F96B1227ACCA00AEC0D7 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C698F9671227ACC500AEC0D7 /* Growl.framework */; };
+		C698F9751227ACD600AEC0D7 /* SafariBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C698F9731227ACD600AEC0D7 /* SafariBar.m */; };
+		C698F9861227AD3A00AEC0D7 /* Growler.m in Sources */ = {isa = PBXBuildFile; fileRef = C698F9851227AD3A00AEC0D7 /* Growler.m */; };
+		C698F98B1227AD5600AEC0D7 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = C698F98A1227AD5600AEC0D7 /* RegexKitLite.m */; };
 		C6AF962612277225003F9D8F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AF962512277225003F9D8F /* Sparkle.framework */; };
 		C6AF962B12277249003F9D8F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AF962512277225003F9D8F /* Sparkle.framework */; };
 /* End PBXBuildFile section */
@@ -32,6 +36,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				C698F96B1227ACCA00AEC0D7 /* Growl.framework in Frameworks */,
 				C6AF962B12277249003F9D8F /* Sparkle.framework in Frameworks */,
 			);
 			name = Frameworks;
@@ -63,8 +68,13 @@
 		C618BCFB122768FA0053EF89 /* NullRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullRequestHandler.m; sourceTree = "<group>"; };
 		C65AC8C5122781D400CEA888 /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone.png; sourceTree = "<group>"; };
 		C65AC8FC1227840600CEA888 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
-		C65AC9AD1227940000CEA888 /* TransparentWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransparentWindow.h; sourceTree = "<group>"; };
-		C65AC9AE1227940000CEA888 /* TransparentWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransparentWindow.m; sourceTree = "<group>"; };
+		C698F9671227ACC500AEC0D7 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
+		C698F9721227ACD600AEC0D7 /* SafariBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafariBar.h; sourceTree = "<group>"; };
+		C698F9731227ACD600AEC0D7 /* SafariBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafariBar.m; sourceTree = "<group>"; };
+		C698F9841227AD3A00AEC0D7 /* Growler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Growler.h; sourceTree = "<group>"; };
+		C698F9851227AD3A00AEC0D7 /* Growler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Growler.m; sourceTree = "<group>"; };
+		C698F9891227AD5600AEC0D7 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		C698F98A1227AD5600AEC0D7 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		C6AF962512277225003F9D8F /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +87,7 @@
 				C618BCB4122764540053EF89 /* WebKit.framework in Frameworks */,
 				C6AF962612277225003F9D8F /* Sparkle.framework in Frameworks */,
 				C65AC8FD1227840600CEA888 /* Quartz.framework in Frameworks */,
+				C698F9681227ACC500AEC0D7 /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +97,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				C65AC9AB122793E500CEA888 /* Candy */,
 				256AC3D80F4B6AC300CF3369 /* GmailAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* GmailAppDelegate.m */,
 				C618BC7C122763070053EF89 /* GmailWindowController.h */,
@@ -95,6 +105,10 @@
 				C618BCD0122766870053EF89 /* GmailWindow.m */,
 				C618BCFA122768FA0053EF89 /* NullRequestHandler.h */,
 				C618BCFB122768FA0053EF89 /* NullRequestHandler.m */,
+				C698F9721227ACD600AEC0D7 /* SafariBar.h */,
+				C698F9731227ACD600AEC0D7 /* SafariBar.m */,
+				C698F9841227AD3A00AEC0D7 /* Growler.h */,
+				C698F9851227AD3A00AEC0D7 /* Growler.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -102,6 +116,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C698F9671227ACC500AEC0D7 /* Growl.framework */,
 				C6AF962512277225003F9D8F /* Sparkle.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				C618BCB3122764540053EF89 /* WebKit.framework */,
@@ -143,6 +158,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C698F9891227AD5600AEC0D7 /* RegexKitLite.h */,
+				C698F98A1227AD5600AEC0D7 /* RegexKitLite.m */,
 				256AC3F00F4B6AF500CF3369 /* Gmail_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -177,15 +194,6 @@
 				C618BCE61227678B0053EF89 /* Icon.icns */,
 			);
 			name = Images;
-			sourceTree = "<group>";
-		};
-		C65AC9AB122793E500CEA888 /* Candy */ = {
-			isa = PBXGroup;
-			children = (
-				C65AC9AD1227940000CEA888 /* TransparentWindow.h */,
-				C65AC9AE1227940000CEA888 /* TransparentWindow.m */,
-			);
-			name = Candy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,7 +260,9 @@
 				C618BC7E122763070053EF89 /* GmailWindowController.m in Sources */,
 				C618BCD1122766870053EF89 /* GmailWindow.m in Sources */,
 				C618BCFC122768FA0053EF89 /* NullRequestHandler.m in Sources */,
-				C65AC9AF1227940000CEA888 /* TransparentWindow.m in Sources */,
+				C698F9751227ACD600AEC0D7 /* SafariBar.m in Sources */,
+				C698F9861227AD3A00AEC0D7 /* Growler.m in Sources */,
+				C698F98B1227AD5600AEC0D7 /* RegexKitLite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
