@@ -14,11 +14,28 @@
 		8D15AC310486D014006FF6A4 /* MyDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* MyDocument.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
+		C610B6A812273565006A3991 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = C610B6A712273565006A3991 /* dsa_pub.pem */; };
+		C610B6AB122735CA006A3991 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C610B6AA122735CA006A3991 /* Sparkle.framework */; };
+		C610B6B5122735E6006A3991 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C610B6AA122735CA006A3991 /* Sparkle.framework */; };
 		C6F6549D122621C700967D8C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F6549C122621C700967D8C /* WebKit.framework */; };
 		C6F6549F122621D100967D8C /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = C6F6549E122621D100967D8C /* Icon.icns */; };
 		C6F654A51226220900967D8C /* BrowserWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F654A41226220900967D8C /* BrowserWindow.m */; };
 		C6F65653122644E000967D8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F65652122644E000967D8C /* AppDelegate.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C610B6B9122735F0006A3991 /* Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C610B6B5122735E6006A3991 /* Sparkle.framework in Frameworks */,
+			);
+			name = Frameworks;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		089C1660FE840EACC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -35,6 +52,8 @@
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D15AC360486D014006FF6A4 /* Gmail-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Gmail-Info.plist"; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* Gmail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gmail.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C610B6A712273565006A3991 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		C610B6AA122735CA006A3991 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = /Users/thall/Src/Cocoa/VirtualHostX/Sparkle.framework; sourceTree = "<absolute>"; };
 		C6F6549C122621C700967D8C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		C6F6549E122621D100967D8C /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		C6F654A31226220900967D8C /* BrowserWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserWindow.h; sourceTree = "<group>"; };
@@ -50,6 +69,7 @@
 			files = (
 				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
 				C6F6549D122621C700967D8C /* WebKit.framework in Frameworks */,
+				C610B6AB122735CA006A3991 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +81,7 @@
 			children = (
 				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
 				C6F6549C122621C700967D8C /* WebKit.framework */,
+				C610B6AA122735CA006A3991 /* Sparkle.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -120,6 +141,7 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C610B6A712273565006A3991 /* dsa_pub.pem */,
 				C6F6549E122621D100967D8C /* Icon.icns */,
 				2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */,
 				8D15AC360486D014006FF6A4 /* Gmail-Info.plist */,
@@ -149,6 +171,7 @@
 				8D15AC2B0486D014006FF6A4 /* Resources */,
 				8D15AC300486D014006FF6A4 /* Sources */,
 				8D15AC330486D014006FF6A4 /* Frameworks */,
+				C610B6B9122735F0006A3991 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -187,6 +210,7 @@
 				1DDD582C0DA1D0D100B32029 /* MyDocument.xib in Resources */,
 				1DDD582D0DA1D0D100B32029 /* MainMenu.xib in Resources */,
 				C6F6549F122621D100967D8C /* Icon.icns in Resources */,
+				C610B6A812273565006A3991 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +271,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../VirtualHostX\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -264,6 +292,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../VirtualHostX\"",
+				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Gmail_Prefix.pch;
