@@ -39,7 +39,7 @@
 									description:@"You have an incoming Gmail voice call."
 							   notificationName:@"Incoming Voice Call" 
 									   iconData:iconData 
-										context:nil];
+										context:@"call"];
 		voiceBounce = NO;
 	}
 }
@@ -53,7 +53,7 @@
 									description:@"You have an incoming Gmail video call."
 							   notificationName:@"Incoming Video Call"
 									   iconData:iconData 
-										context:nil];
+										context:@"video"];
 		videoBounce = NO;
 	}
 }
@@ -66,7 +66,7 @@
 									description:@"You have a new Google Talk message."
 							   notificationName:@"New Chat Message"
 									   iconData:iconData 
-										context:nil];
+										context:@"chat"];
 		chatBounce = NO;
 	}
 }

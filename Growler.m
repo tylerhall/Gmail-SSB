@@ -49,7 +49,7 @@ static Growler *sharedGrowler;
 
 - (void)growlNotificationWasClicked:(id)clickContext
 {
-	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:clickContext]];
+	[NSApp activateIgnoringOtherApps:YES];
 }
 
 @end
