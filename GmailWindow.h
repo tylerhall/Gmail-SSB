@@ -1,5 +1,5 @@
 //
-//  main.m
+//  GmailWindow.h
 //  Gmail
 //
 //  Created by Tyler Hall on 8/26/10.
@@ -8,7 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-int main(int argc, char *argv[])
-{
-    return NSApplicationMain(argc,  (const char **) argv);
+
+@interface GmailWindow : NSObject {
+
 }
+
+@end
