@@ -47,6 +47,7 @@
 	[webView setUIDelegate:self];
 	[[webView preferences] setDefaultFontSize:16];
 	[webView setContinuousSpellCheckingEnabled:YES];
+	[webView setShouldCloseWithWindow:NO];
 	[webView setCustomUserAgent:@"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_4; en-us) AppleWebKit/533.17.8 (KHTML, like Gecko) Version/5.0.1 Safari/533.17.8"];
 
 	if(![webView mainFrameURL]) {
