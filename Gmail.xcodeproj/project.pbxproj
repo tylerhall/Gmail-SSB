@@ -309,6 +309,7 @@
 				GCC_PREFIX_HEADER = Gmail_Prefix.pch;
 				INFOPLIST_FILE = "Gmail-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = Gmail;
 			};
 			name = Debug;
@@ -327,7 +328,7 @@
 				GCC_PREFIX_HEADER = Gmail_Prefix.pch;
 				INFOPLIST_FILE = "Gmail-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = Gmail;
 			};
 			name = Release;
