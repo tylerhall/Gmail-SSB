@@ -17,6 +17,12 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(incomingChat:) name:@"INCOMING_CHAT" object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(unreadCountChanged:) name:@"UNREAD_COUNT_CHANGED" object:nil];
 	
+//	NSMenu *mainMenu = [[NSApplication sharedApplication] mainMenu];
+//	NSMenu *editMenu = [[mainMenu itemWithTitle:@"Edit"] submenu];
+//	NSMenu *spellingMenu = [[editMenu itemWithTitle:@"Spelling and Grammar"] submenu];
+//	NSMenuItem *autoSpellingMenuItem = [spellingMenu itemWithTitle:@"Check Spelling While Typing"];
+//	[autoSpellingMenuItem setEnabled:YES];
+	
 	mainWindowController = [[GmailWindowController alloc] initWithWindowNibName:@"GmailWindow"];
 	[mainWindowController showWindow:self];
 }
