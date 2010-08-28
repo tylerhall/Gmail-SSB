@@ -44,6 +44,8 @@
 	if(![webView mainFrameURL]) {
 		[[webView mainFrame] loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://mail.google.com"]]];
 	}
+	
+	[[self window] setMovableByWindowBackground:YES];
 }
 
 - (void)webView:(WebView *)sender didReceiveTitle:(NSString *)title forFrame:(WebFrame *)frame {
