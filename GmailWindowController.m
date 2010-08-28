@@ -113,6 +113,10 @@
 	return [nullHandler webView];
 }
 
+-(void)webView:(WebView *)sender setFrame:(NSRect)frame {
+	[[self window] setFrame:frame display:YES];
+}
+
 // From: http://cocoawithlove.com/2009/08/animating-window-to-fullscreen-on-mac.html
 - (void)toggleFullscreen {
 	if(oldFrame.size.width > 0)
