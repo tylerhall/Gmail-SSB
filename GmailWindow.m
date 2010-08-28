@@ -19,4 +19,9 @@
 	[self setIsVisible:NO];
 }
 
+- (BOOL)canBecomeKeyWindow
+{
+	return YES;
+}
+
 @end

@@ -24,5 +24,6 @@
 - (void)incomingCall:(NSNotification *)notification;
 - (void)incomingChat:(NSNotification *)notification;
 - (void)unreadCountChanged:(NSNotification *)notification;
+- (IBAction)toggleFullscreen:(id)sender;
 
 @end

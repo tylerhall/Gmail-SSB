@@ -10,6 +10,7 @@
 #import "NullRequestHandler.h"
 #import "SafariBar.h"
 #import "RegexKitLite.h"
+#import "GmailWindow.h"
 
 @implementation GmailWindowController
 
@@ -103,6 +104,60 @@
 	NullRequestHandler *nullHandler = [[NullRequestHandler alloc] init];
 	[nullHandler loadRequest:request];
 	return [nullHandler webView];
+}
+
+// From: http://cocoawithlove.com/2009/08/animating-window-to-fullscreen-on-mac.html
+- (void)toggleFullscreen {
+	if(fullscreenWindow)
+	{
+		NSRect newFrame = [fullscreenWindow frameRectForContentRect:[[self window] contentRectForFrameRect:[[self window] frame]]];
+		[fullscreenWindow setFrame:newFrame display:YES animate:YES];
+		
+		NSView *contentView = [[[fullscreenWindow contentView] retain] autorelease];
+		[fullscreenWindow setContentView:[[[NSView alloc] init] autorelease]];
+		
+		[[self window] setContentView:contentView];
+		[[self window] makeKeyAndOrderFront:nil];
+		
+		[fullscreenWindow close];
+		fullscreenWindow = nil;
+		
+		if([[[self window] screen] isEqual:[[NSScreen screens] objectAtIndex:0]])
+		{
+			if([NSApp respondsToSelector:@selector(setPresentationOptions:)])
+				[NSApp setPresentationOptions:NSApplicationPresentationDefault];
+			else
+				[NSMenu setMenuBarVisible:YES];
+		}
+	}
+	else
+	{
+		[[self window] deminiaturize:nil];
+		
+		if([[[self window] screen] isEqual:[[NSScreen screens] objectAtIndex:0]])
+		{
+			if([NSApp respondsToSelector:@selector(setPresentationOptions:)])
+				[NSApp setPresentationOptions:NSApplicationPresentationAutoHideMenuBar | NSApplicationPresentationAutoHideDock];
+			else
+				[NSMenu setMenuBarVisible:NO];
+		}
+		
+		fullscreenWindow = [[GmailWindow alloc]
+							initWithContentRect:[[self window] contentRectForFrameRect:[[self window] frame]]
+							styleMask:NSBorderlessWindowMask
+							backing:NSBackingStoreBuffered
+							defer:YES];
+		
+		NSView *contentView = [[[[self window] contentView] retain] autorelease];
+		[[self window] setContentView:[[[NSView alloc] init] autorelease]];
+		
+		[fullscreenWindow setContentView:contentView];
+		[fullscreenWindow setTitle:[[self window] title]];
+		[fullscreenWindow makeKeyAndOrderFront:nil];
+		[fullscreenWindow setFrame:[fullscreenWindow frameRectForContentRect:[[[self window] screen] frame]] display:YES animate:NO];
+		
+		[[self window] orderOut:nil];
+	}
 }
 
 @end
