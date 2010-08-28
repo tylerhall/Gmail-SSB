@@ -16,7 +16,7 @@
 	IBOutlet WebView *webView;
 	IBOutlet SafariBar *statusBar;
 	WebView *replacementWebView;
-	GmailWindow *fullscreenWindow;
+	NSRect oldFrame;
 }
 
 - (id)initWithWebView:(WebView *)newWebView;

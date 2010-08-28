@@ -14,11 +14,18 @@
 
 @implementation GmailWindowController
 
+- (id)initWithWindow:(NSWindow *)window andWebView:(WebView *)newWebView {
+	self = [super initWithWindow:window];
+	replacementWebView = newWebView;
+	return self;
+}
+
 - (id)initWithWebView:(WebView *)newWebView {
 	// This loads in the WebView that we were surreptitiously
 	// loading in the background via NullRequestHandler.
 	self = [super initWithWindowNibName:@"GmailWindow"];
 	replacementWebView = newWebView;
+	[[self window] setFrameAutosaveName:@""];
 	return self;
 }
 
@@ -108,20 +115,12 @@
 
 // From: http://cocoawithlove.com/2009/08/animating-window-to-fullscreen-on-mac.html
 - (void)toggleFullscreen {
-	if(fullscreenWindow)
+	if(oldFrame.size.width > 0)
 	{
-		NSRect newFrame = [fullscreenWindow frameRectForContentRect:[[self window] contentRectForFrameRect:[[self window] frame]]];
-		[fullscreenWindow setFrame:newFrame display:YES animate:YES];
-		
-		NSView *contentView = [[[fullscreenWindow contentView] retain] autorelease];
-		[fullscreenWindow setContentView:[[[NSView alloc] init] autorelease]];
-		
-		[[self window] setContentView:contentView];
-		[[self window] makeKeyAndOrderFront:nil];
-		
-		[fullscreenWindow close];
-		fullscreenWindow = nil;
-		
+		[[self window] setFrame:oldFrame display:YES animate:YES];
+		oldFrame.size.width = 0;
+		[[self window] setFrameAutosaveName:@"MainWindow"];
+
 		if([[[self window] screen] isEqual:[[NSScreen screens] objectAtIndex:0]])
 		{
 			if([NSApp respondsToSelector:@selector(setPresentationOptions:)])
@@ -133,6 +132,7 @@
 	else
 	{
 		[[self window] deminiaturize:nil];
+		oldFrame = [[self window] frame];
 		
 		if([[[self window] screen] isEqual:[[NSScreen screens] objectAtIndex:0]])
 		{
@@ -141,22 +141,9 @@
 			else
 				[NSMenu setMenuBarVisible:NO];
 		}
-		
-		fullscreenWindow = [[GmailWindow alloc]
-							initWithContentRect:[[self window] contentRectForFrameRect:[[self window] frame]]
-							styleMask:NSBorderlessWindowMask
-							backing:NSBackingStoreBuffered
-							defer:YES];
-		
-		NSView *contentView = [[[[self window] contentView] retain] autorelease];
-		[[self window] setContentView:[[[NSView alloc] init] autorelease]];
-		
-		[fullscreenWindow setContentView:contentView];
-		[fullscreenWindow setTitle:[[self window] title]];
-		[fullscreenWindow makeKeyAndOrderFront:nil];
-		[fullscreenWindow setFrame:[fullscreenWindow frameRectForContentRect:[[[self window] screen] frame]] display:YES animate:NO];
-		
-		[[self window] orderOut:nil];
+
+		[[self window] setFrameAutosaveName:@""];
+		[[self window] setFrame:[[self window] frameRectForContentRect:[[[self window] screen] frame]] display:YES animate:YES];
 	}
 }
 
