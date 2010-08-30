@@ -152,4 +152,16 @@
 	}
 }
 
+- (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
+	if(frame == [sender mainFrame]) {
+		[self loadRapportivePlugin];
+	}
+}
+
+- (void)loadRapportivePlugin {
+	WebScriptObject *ws = [webView windowScriptObject];
+	NSString *jsRapportive = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"rapportive" ofType:@"js"] encoding:NSUTF8StringEncoding error:nil];
+	[ws evaluateWebScript:jsRapportive];
+}
+
 @end

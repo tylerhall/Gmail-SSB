@@ -21,5 +21,6 @@
 
 - (id)initWithWebView:(WebView *)newWebView;
 - (void)toggleFullscreen;
+- (void)loadRapportivePlugin;
 
 @end
