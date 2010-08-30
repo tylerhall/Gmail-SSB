@@ -28,6 +28,7 @@
 		C698F9EE1227B37300AEC0D7 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C698F9ED1227B37300AEC0D7 /* Credits.rtf */; };
 		C6AF962612277225003F9D8F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AF962512277225003F9D8F /* Sparkle.framework */; };
 		C6AF962B12277249003F9D8F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AF962512277225003F9D8F /* Sparkle.framework */; };
+		C6CD0E24122B9CD900CD30C7 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = C6CD0E23122B9CD900CD30C7 /* dsa_pub.pem */; };
 		C6DDB9AC122B84FA0027A0CC /* gmailssb.js in Sources */ = {isa = PBXBuildFile; fileRef = C6DDB9AB122B84FA0027A0CC /* gmailssb.js */; };
 		C6DDB9B9122B85850027A0CC /* gmailssb.js in Resources */ = {isa = PBXBuildFile; fileRef = C6DDB9AB122B84FA0027A0CC /* gmailssb.js */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 		C698F98A1227AD5600AEC0D7 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		C698F9ED1227B37300AEC0D7 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		C6AF962512277225003F9D8F /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		C6CD0E23122B9CD900CD30C7 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		C6DDB9AB122B84FA0027A0CC /* gmailssb.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = gmailssb.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,6 +176,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C6CD0E23122B9CD900CD30C7 /* dsa_pub.pem */,
 				C618BCE81227678E0053EF89 /* Images */,
 				C6DDB9AB122B84FA0027A0CC /* gmailssb.js */,
 				8D1107310486CEB800E47090 /* Gmail-Info.plist */,
@@ -254,6 +257,7 @@
 				C698F9EE1227B37300AEC0D7 /* Credits.rtf in Resources */,
 				C6DDB9B9122B85850027A0CC /* gmailssb.js in Resources */,
 				C618BC7A122762970053EF89 /* GmailWindow.xib in Resources */,
+				C6CD0E24122B9CD900CD30C7 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
