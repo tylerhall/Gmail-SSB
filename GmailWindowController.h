@@ -17,10 +17,10 @@
 	IBOutlet SafariBar *statusBar;
 	WebView *replacementWebView;
 	NSRect oldFrame;
+	NSTimer *unreadTimer;
 }
 
 - (id)initWithWebView:(WebView *)newWebView;
 - (void)toggleFullscreen;
-- (void)loadRapportivePlugin;
 
 @end

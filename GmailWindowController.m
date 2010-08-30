@@ -55,6 +55,9 @@
 	}
 	
 	[[self window] setMovableByWindowBackground:YES];
+
+	unreadTimer = [[NSTimer alloc] initWithFireDate:[NSDate date] interval:1 target:self selector:@selector(checkUnreadCount) userInfo:nil repeats:YES];
+	[[NSRunLoop mainRunLoop] addTimer:unreadTimer forMode:NSDefaultRunLoopMode];
 }
 
 - (void)webView:(WebView *)sender didReceiveTitle:(NSString *)title forFrame:(WebFrame *)frame {
@@ -71,18 +74,6 @@
 	NSRange newChat = [title rangeOfString:@"says…"];
 	if(newChat.location != NSNotFound)
 		[[NSNotificationCenter defaultCenter] postNotificationName:@"INCOMING_CHAT" object:nil userInfo:nil];
-
-	
-	NSRange noMail = [title rangeOfString:@"Inbox -"];
-	if(noMail.location != NSNotFound) {
-		[[NSNotificationCenter defaultCenter] postNotificationName:@"UNREAD_COUNT_CHANGED" object:nil userInfo:nil];
-	} else {
-		NSRange inbox = [title rangeOfString:@"Inbox"];
-		if(inbox.location != NSNotFound) {
-			int count = [[title stringByMatching:@"Inbox \\(([0-9]+)\\)" capture:1L] intValue];
-			[[NSNotificationCenter defaultCenter] postNotificationName:@"UNREAD_COUNT_CHANGED" object:nil userInfo:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:count] forKey:@"count"]];
-		}
-	}
 }
 
 - (void)webView:(WebView *)sender mouseDidMoveOverElement:(NSDictionary *)elementInformation modifierFlags:(NSUInteger)modifierFlags {
@@ -154,14 +145,19 @@
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame {
 	if(frame == [sender mainFrame]) {
-		[self loadRapportivePlugin];
+		WebScriptObject *ws = [webView windowScriptObject];
+		NSString *js = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"gmailssb" ofType:@"js"] encoding:NSUTF8StringEncoding error:nil];
+		[ws evaluateWebScript:js];
 	}
 }
 
-- (void)loadRapportivePlugin {
+- (void)checkUnreadCount {
 	WebScriptObject *ws = [webView windowScriptObject];
-	NSString *jsRapportive = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"rapportive" ofType:@"js"] encoding:NSUTF8StringEncoding error:nil];
-	[ws evaluateWebScript:jsRapportive];
+	id count = [ws callWebScriptMethod:@"gmailSSBUnreadCount" withArguments:nil];
+	if(!count || (count == [WebUndefined undefined]))
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"UNREAD_COUNT_CHANGED" object:nil userInfo:nil];
+	else
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"UNREAD_COUNT_CHANGED" object:nil userInfo:[NSDictionary dictionaryWithObject:count forKey:@"count"]];
 }
 
 @end

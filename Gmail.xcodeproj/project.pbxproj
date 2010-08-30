@@ -28,8 +28,8 @@
 		C698F9EE1227B37300AEC0D7 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C698F9ED1227B37300AEC0D7 /* Credits.rtf */; };
 		C6AF962612277225003F9D8F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AF962512277225003F9D8F /* Sparkle.framework */; };
 		C6AF962B12277249003F9D8F /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AF962512277225003F9D8F /* Sparkle.framework */; };
-		C6DDB9AC122B84FA0027A0CC /* rapportive.js in Sources */ = {isa = PBXBuildFile; fileRef = C6DDB9AB122B84FA0027A0CC /* rapportive.js */; };
-		C6DDB9B9122B85850027A0CC /* rapportive.js in Resources */ = {isa = PBXBuildFile; fileRef = C6DDB9AB122B84FA0027A0CC /* rapportive.js */; };
+		C6DDB9AC122B84FA0027A0CC /* gmailssb.js in Sources */ = {isa = PBXBuildFile; fileRef = C6DDB9AB122B84FA0027A0CC /* gmailssb.js */; };
+		C6DDB9B9122B85850027A0CC /* gmailssb.js in Resources */ = {isa = PBXBuildFile; fileRef = C6DDB9AB122B84FA0027A0CC /* gmailssb.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -80,7 +80,7 @@
 		C698F98A1227AD5600AEC0D7 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		C698F9ED1227B37300AEC0D7 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		C6AF962512277225003F9D8F /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
-		C6DDB9AB122B84FA0027A0CC /* rapportive.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = rapportive.js; sourceTree = "<group>"; };
+		C6DDB9AB122B84FA0027A0CC /* gmailssb.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = gmailssb.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				C618BCE81227678E0053EF89 /* Images */,
-				C6DDB9AB122B84FA0027A0CC /* rapportive.js */,
+				C6DDB9AB122B84FA0027A0CC /* gmailssb.js */,
 				8D1107310486CEB800E47090 /* Gmail-Info.plist */,
 				C698F9ED1227B37300AEC0D7 /* Credits.rtf */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
@@ -249,11 +249,11 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
-				C618BC7A122762970053EF89 /* GmailWindow.xib in Resources */,
 				C618BCE71227678B0053EF89 /* Icon.icns in Resources */,
 				C65AC8C6122781D400CEA888 /* phone.png in Resources */,
 				C698F9EE1227B37300AEC0D7 /* Credits.rtf in Resources */,
-				C6DDB9B9122B85850027A0CC /* rapportive.js in Resources */,
+				C6DDB9B9122B85850027A0CC /* gmailssb.js in Resources */,
+				C618BC7A122762970053EF89 /* GmailWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +272,7 @@
 				C698F9751227ACD600AEC0D7 /* SafariBar.m in Sources */,
 				C698F9861227AD3A00AEC0D7 /* Growler.m in Sources */,
 				C698F98B1227AD5600AEC0D7 /* RegexKitLite.m in Sources */,
-				C6DDB9AC122B84FA0027A0CC /* rapportive.js in Sources */,
+				C6DDB9AC122B84FA0027A0CC /* gmailssb.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
